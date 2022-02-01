@@ -2,6 +2,10 @@ package com.atguigu.restfulcrud.config;
 
 import com.atguigu.restfulcrud.component.LoginHandlerInterceptor;
 import com.atguigu.restfulcrud.component.MyLocaleResolver;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
+import org.springframework.boot.web.server.WebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -40,8 +44,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
                 // /** 拦截任意界面的任意请求
                 // 静态资源： *.css , *.js
                 //springBoot 已经做好了静态资源映射
-                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                    .excludePathPatterns("/index.html", "/user/login", "/static/css/**", "/webjars/**");
+//                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//                    .excludePathPatterns("/index.html", "/user/login", "/static/css/**", "/webjars/**");
 
             }
         };
